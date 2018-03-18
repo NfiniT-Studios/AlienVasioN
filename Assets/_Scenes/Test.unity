@@ -189,10 +189,10 @@ Transform:
   m_GameObject: {fileID: 226208791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1051043404}
-  m_RootOrder: 0
+  m_Father: {fileID: 743213537}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294582444
 GameObject:
@@ -348,6 +348,7 @@ Transform:
   - {fileID: 1261858889}
   - {fileID: 1051043404}
   - {fileID: 542254628}
+  - {fileID: 226208795}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -380,8 +381,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_Children:
-  - {fileID: 226208795}
+  m_Children: []
   m_Father: {fileID: 743213537}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -399,7 +399,7 @@ MonoBehaviour:
   objectName: Player
   objectDescription: Ship Controlled by player
   shipAccelerationSpeed: 150
-  shipRotationSpeed: 2
+  shipRotationSpeed: 150
   shipStartingHealth: 15
   shipBaseDamage: 4
   shipBaseArmor: 2

@@ -67,4 +67,6 @@ public abstract class BaseShip : BaseObject
     }
     abstract public void StartAccelerating();
     abstract public void StopAccelerating();
+    abstract public void StartRotating();
+    abstract public void StopRotating();
 }    

@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
+/// <summary>Manager class for controlling input-driven event calls.</summary>
 public class InputManager : MonoBehaviour{
     public delegate void NoArg();
     public static event NoArg OnAccelerationStart;
@@ -18,7 +17,7 @@ public class InputManager : MonoBehaviour{
 		
 	}
 	
-	// Update is called once per frame
+    /// <summary>Continuous detection of input and calling of appropriate input-related events.</summary>
 	void Update () {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
@@ -30,5 +29,7 @@ public class InputManager : MonoBehaviour{
             if (OnAccelerationStop != null)
                 OnAccelerationStop();
         }
+        if (OnRotationStart != null)
+            OnRotationStart();
     }
 }
