@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Player : CombativeShip
 {
+    [Space(10)] [Header("Player Specific Settings")]
+    [Tooltip("Projectile to shoot")][SerializeField]
+    private BaseProjectile testBullet;
+    [Tooltip("Shot spawn location")][SerializeField]
+    private Transform shotSpawn;
+
     public override void Die()
     {
     }
@@ -22,6 +28,11 @@ public class Player : CombativeShip
 
     public override void RevealIdentity()
     {
+    }
+
+    public override void Shoot()
+    {
+        Instantiate(testBullet.gameObject, shotSpawn.position, shotSpawn.rotation);
     }
 
     public override void StartAccelerating()
@@ -52,11 +63,14 @@ public class Player : CombativeShip
         InputManager.OnAccelerationStart += StartAccelerating;
         InputManager.OnAccelerationStop += StopAccelerating;
         InputManager.OnRotationStart += StartRotating;
+        InputManager.OnFiringStart += Shoot;
 	}
     private void OnDestroy()
     {
         InputManager.OnAccelerationStart -= StartAccelerating;
         InputManager.OnAccelerationStop -= StopAccelerating;
+        InputManager.OnRotationStart -= StartRotating;
+        InputManager.OnFiringStart -= Shoot;
     }
 
     // Update is called once per frame

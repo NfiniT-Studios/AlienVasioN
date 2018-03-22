@@ -84,9 +84,27 @@ public abstract class CombativeShip : BaseShip, ICombative
 
 
 
-
-    abstract public void Die();
+    /// <summary>Kill this object.  Overrideable.</summary>
+    virtual public void Die()
+    {
+        Destroy(gameObject);
+    }
+    /// <summary>Apply damage to current health.  Overrideable.</summary>
+    virtual public void TakeDamage(int damageToTake)
+    {
+        CurrentHealth -= damageToTake;
+        if (CurrentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    
+    
+    
+    
+    
+    /// <summary>Shoot a projectile.  Overrideable.</summary>
+    abstract public void Shoot();
     abstract public void IssueDamage(int damageToGive, ICombative objectToDamage);
     abstract public void Kill(ICombative objectToKill);
-    abstract public void TakeDamage(int damageToTake);
 }

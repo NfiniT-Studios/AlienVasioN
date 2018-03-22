@@ -29,6 +29,11 @@ public class InputManager : MonoBehaviour{
             if (OnAccelerationStop != null)
                 OnAccelerationStop();
         }
+        if (Input.GetKeyDown(KeyCode.Mouse0) && OnFiringStart != null)
+        {
+            OnFiringStart();
+        }
+
         if (OnRotationStart != null)
             OnRotationStart();
     }
